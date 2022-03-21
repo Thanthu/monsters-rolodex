@@ -18,8 +18,7 @@ class App extends Component {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((users) => this.setState(
-        () => { return { monsters: users } },
-        () => console.log(this.state)
+        () => { return { monsters: users } }
       ));
   }
 
@@ -31,8 +30,7 @@ class App extends Component {
         <input className='search-box' type='search' placeholder='search monsters' onChange={(event) => {
           const searchString = event.target.value.toLowerCase();
           this.setState(
-            () => { return { searchString } },
-            () => console.log(this.state)
+            () => { return { searchString } }
           );
         }} />
         {filteredMonsters.map((monster) => <h1 key={monster.id}>{monster.name}</h1>)}
