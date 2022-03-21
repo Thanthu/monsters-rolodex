@@ -39,7 +39,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SearchBox onChangeHandler={onSearchChange} />
+        <SearchBox className='search-box' onChangeHandler={onSearchChange} />
         <CardList monsters={filteredMonsters} />
       </div>
     );
