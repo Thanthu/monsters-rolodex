@@ -3,6 +3,7 @@ import { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CardList from './components/card-list/CardList';
+import SearchBox from './components/search-box/SearchBox';
 
 class App extends Component {
 
@@ -38,7 +39,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input className='search-box' type='search' placeholder='search monsters' onChange={onSearchChange} />
+        <SearchBox onChangeHandler={onSearchChange} />
         <CardList monsters={filteredMonsters} />
       </div>
     );
