@@ -22,17 +22,19 @@ class App extends Component {
       ));
   }
 
+  onSearchChange = (event) => {
+    const searchString = event.target.value.toLowerCase();
+    this.setState(
+      () => { return { searchString } }
+    );
+  };
+
   render() {
     const filteredMonsters = this.state.monsters.filter((monster) => monster.name.toLowerCase().includes(this.state.searchString));
 
     return (
       <div className="App">
-        <input className='search-box' type='search' placeholder='search monsters' onChange={(event) => {
-          const searchString = event.target.value.toLowerCase();
-          this.setState(
-            () => { return { searchString } }
-          );
-        }} />
+        <input className='search-box' type='search' placeholder='search monsters' onChange={this.onSearchChange} />
         {filteredMonsters.map((monster) => <h1 key={monster.id}>{monster.name}</h1>)}
       </div>
     );
